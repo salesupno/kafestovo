@@ -4,6 +4,22 @@ import { useEffect } from "react";
 
 export default function RevealObserver() {
   useEffect(() => {
+    const alreadyVisible: HTMLElement[] = [];
+
+    document.querySelectorAll<HTMLElement>(".reveal").forEach((el) => {
+      if (el.getBoundingClientRect().top < window.innerHeight) {
+        el.style.transition = "none";
+        el.classList.add("in");
+        alreadyVisible.push(el);
+      }
+    });
+
+    requestAnimationFrame(() => {
+      alreadyVisible.forEach((el) => {
+        el.style.transition = "";
+      });
+    });
+
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -16,7 +32,7 @@ export default function RevealObserver() {
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
 
-    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    document.querySelectorAll(".reveal:not(.in)").forEach((el) => io.observe(el));
 
     return () => io.disconnect();
   }, []);
