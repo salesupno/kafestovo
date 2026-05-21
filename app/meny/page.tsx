@@ -37,7 +37,6 @@ const jsonLd = {
     hasMenuItem: kat.items.map((item) => ({
       "@type": "MenuItem",
       name: item.name,
-      description: item.description ?? undefined,
       offers: {
         "@type": "Offer",
         price: item.price,
