@@ -14,7 +14,7 @@ const kategoriar = [
       { name: "Svinesteik", price: "259" },
     ],
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: 56, height: 56, color: "var(--color-burgundy-deep)", strokeWidth: "1.2" }}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: 40, height: 40, color: "var(--color-burgundy-deep)", strokeWidth: "1.3" }}>
         <ellipse cx="12" cy="14" rx="9" ry="3"/>
         <path d="M3 14v2a9 3 0 0 0 18 0v-2"/>
         <path d="M7 10c2-2 6-2 10 0"/>
@@ -34,7 +34,7 @@ const kategoriar = [
       { name: "Cognac-smaking", price: "spør oss" },
     ],
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: 56, height: 56, color: "var(--color-burgundy-deep)", strokeWidth: "1.2" }}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: 40, height: 40, color: "var(--color-burgundy-deep)", strokeWidth: "1.3" }}>
         <path d="M7 3h10l-1 8a4 4 0 0 1-8 0L7 3z"/>
         <path d="M12 15v6M9 21h6"/>
         <path d="M17 5h2a2 2 0 0 1 0 4h-2"/>
@@ -53,7 +53,7 @@ const kategoriar = [
       { name: "Reker m/ majones", price: "119" },
     ],
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: 56, height: 56, color: "var(--color-burgundy-deep)", strokeWidth: "1.2" }}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: 40, height: 40, color: "var(--color-burgundy-deep)", strokeWidth: "1.3" }}>
         <rect x="3" y="7" width="18" height="3" rx="1"/>
         <rect x="3" y="13" width="18" height="3" rx="1"/>
         <path d="M6 10v3M10 10v3M14 10v3M18 10v3"/>
@@ -72,7 +72,7 @@ const kategoriar = [
       { name: "Te / urteinfusjon", price: "38" },
     ],
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: 56, height: 56, color: "var(--color-burgundy-deep)", strokeWidth: "1.2" }}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: 40, height: 40, color: "var(--color-burgundy-deep)", strokeWidth: "1.3" }}>
         <path d="M4 8h13v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z"/>
         <path d="M17 9h2a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-2"/>
         <path d="M7 4c0 1 1 1.5 1 2.5S7 8 7 8M11 4c0 1 1 1.5 1 2.5S11 8 11 8"/>
@@ -92,7 +92,7 @@ const kategoriar = [
       { name: "Vaffel m/ syltetøy", price: "59" },
     ],
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: 56, height: 56, color: "var(--color-burgundy-deep)", strokeWidth: "1.2" }}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: 40, height: 40, color: "var(--color-burgundy-deep)", strokeWidth: "1.3" }}>
         <path d="M3 16c0-4 4-6 9-6s9 2 9 6v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1z"/>
         <path d="M7 10c0-3 2-5 5-5s5 2 5 5"/>
         <path d="M10 5c0-1 1-2 2-2s2 1 2 2"/>
@@ -111,7 +111,7 @@ const kategoriar = [
       { name: "Dagens varme", price: "199" },
     ],
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: 56, height: 56, color: "var(--color-burgundy-deep)", strokeWidth: "1.2" }}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: 40, height: 40, color: "var(--color-burgundy-deep)", strokeWidth: "1.3" }}>
         <ellipse cx="12" cy="8" rx="8" ry="3"/>
         <path d="M4 8v2a8 3 0 0 0 16 0V8"/>
         <path d="M4 12c0 3 4 4 8 4s8-1 8-4"/>
@@ -150,21 +150,9 @@ export default function MenySection() {
               href={`/meny/${kat.slug}`}
               className={`reveal reveal-delay-${i % 3} group bg-cream rounded-[3px] overflow-hidden border border-line flex flex-col transition-[transform,box-shadow,border-color] duration-[400ms] hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgba(26,20,16,0.25)] hover:border-gold`}
             >
-              {/* Ikon-area */}
-              <div
-                className="relative flex items-center justify-center border-b border-line overflow-hidden"
-                style={{ aspectRatio: "1.5", background: "linear-gradient(135deg, var(--color-bg-2) 0%, var(--color-bg) 100%)" }}
-              >
-                <div
-                  className="absolute inset-0"
-                  style={{ background: "repeating-linear-gradient(45deg,transparent 0,transparent 24px,rgba(168,38,31,0.04) 24px,rgba(168,38,31,0.04) 25px)" }}
-                  aria-hidden
-                />
-                {kat.icon}
-              </div>
-
               {/* Innhald */}
-              <div className="p-[26px_26px_30px] flex flex-col flex-1">
+              <div className="p-[30px_26px_30px] flex flex-col flex-1">
+                <div className="mb-5">{kat.icon}</div>
                 <h3 className="font-serif text-[28px] mb-1.5">{kat.title}</h3>
                 <div className="text-[11px] tracking-[0.18em] uppercase text-burgundy font-bold mb-3.5">{kat.priceRange}</div>
                 <p className="text-ink-soft text-[15px] leading-relaxed mb-[18px] flex-1">{kat.desc}</p>
