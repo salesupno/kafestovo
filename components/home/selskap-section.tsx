@@ -60,7 +60,7 @@ export default function SelskapSection() {
       <div className="absolute top-[-200px] right-[-100px] w-[500px] h-[500px] pointer-events-none" style={{ background: "radial-gradient(circle, rgba(168,38,31,0.25) 0%, transparent 70%)" }} aria-hidden />
       <div className="absolute bottom-[-200px] left-[-100px] w-[500px] h-[500px] pointer-events-none" style={{ background: "radial-gradient(circle, rgba(184,105,58,0.18) 0%, transparent 70%)" }} aria-hidden />
 
-      <div className="relative z-10 max-w-[1280px] mx-auto px-8 max-sm:px-5">
+      <div className="relative z-10 max-w-[1500px] mx-auto px-8 max-sm:px-5">
 
         {/* Overskrift */}
         <div className="grid grid-cols-2 gap-16 items-end mb-16 max-[900px]:grid-cols-1 max-[900px]:gap-6">

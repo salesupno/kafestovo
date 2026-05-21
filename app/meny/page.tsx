@@ -54,7 +54,7 @@ export default function MenyPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="pt-[100px] pb-24 bg-bg">
-        <div className="max-w-7xl mx-auto px-8 max-sm:px-5">
+        <div className="max-w-[1500px] mx-auto px-8 max-sm:px-5">
           <Breadcrumbs items={[{ label: "Menyen", href: "/meny" }]} />
 
           <div className="text-center mb-16 mt-6">

@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <header className="pt-[120px] pb-20 bg-bg relative overflow-hidden" id="top">
-      <div className="max-w-7xl mx-auto px-8 max-sm:px-5">
+      <div className="max-w-[1500px] mx-auto px-8 max-sm:px-5">
         <div className="grid grid-cols-[1.05fr_1fr] gap-16 items-center max-[980px]:grid-cols-1 max-[980px]:gap-10">
 
           {/* Venstre: tekst */}

@@ -11,7 +11,7 @@ export default function InfoSection() {
 
   return (
     <section className="py-[110px] max-sm:py-[70px] bg-bg-2" id="besok">
-      <div className="max-w-[1280px] mx-auto px-8 max-sm:px-5">
+      <div className="max-w-[1500px] mx-auto px-8 max-sm:px-5">
         <div className="grid grid-cols-[1.1fr_1fr] gap-16 items-start max-[900px]:grid-cols-1 max-[900px]:gap-12">
 
           {/* Venstre: opningstider + kart */}

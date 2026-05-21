@@ -15,7 +15,7 @@ export default function CtaBand() {
         ].join(", "),
       }}
     >
-      <div className="max-w-[1280px] mx-auto px-8 max-sm:px-5">
+      <div className="max-w-[1500px] mx-auto px-8 max-sm:px-5">
         <h2 className="reveal font-serif text-[clamp(40px,6vw,84px)] leading-[1.05] mb-5">
           Svolten <em className="italic text-gold">alt no?</em>
         </h2>

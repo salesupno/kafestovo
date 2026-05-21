@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Go2GrillSection() {
   return (
     <section className="py-[110px] max-sm:py-[70px] bg-paper relative" id="bestill">
-      <div className="max-w-[1280px] mx-auto px-8 max-sm:px-5">
+      <div className="max-w-[1500px] mx-auto px-8 max-sm:px-5">
         <div className="grid grid-cols-[1.1fr_1fr] gap-16 items-center max-[980px]:grid-cols-1 max-[980px]:gap-12">
 
           {/* Venstre */}

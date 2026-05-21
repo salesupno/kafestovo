@@ -32,7 +32,7 @@ export default function Nav() {
         scrolled ? "py-2.5" : "py-3.5"
       )}
     >
-      <div className="max-w-7xl mx-auto px-8 max-sm:px-5 flex items-center justify-between gap-6">
+      <div className="max-w-[1500px] mx-auto px-8 max-sm:px-5 flex items-center justify-between gap-6">
         {/* Brand */}
         <Link href="/" className="flex items-center gap-3 text-ink">
           <div className="w-10 h-10 rounded-full bg-burgundy text-cream flex items-center justify-center font-serif italic text-xl border-2 border-cream shadow-[0_0_0_1px_#a8261f]">
@@ -109,7 +109,7 @@ export default function Nav() {
           open ? "max-h-96" : "max-h-0 border-t-0"
         )}
       >
-        <div className="max-w-7xl mx-auto px-8 max-sm:px-5 py-4 flex flex-col gap-4">
+        <div className="max-w-[1500px] mx-auto px-8 max-sm:px-5 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}

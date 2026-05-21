@@ -36,7 +36,7 @@ export default function AktivitetarSection() {
 
   return (
     <section className="py-[110px] max-sm:py-[70px] bg-bg" id="aktivitetar">
-      <div className="max-w-[1280px] mx-auto px-8 max-sm:px-5">
+      <div className="max-w-[1500px] mx-auto px-8 max-sm:px-5">
 
         {/* Overskrift */}
         <div className="text-center max-w-[720px] mx-auto mb-16">

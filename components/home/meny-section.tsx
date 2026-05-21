@@ -124,7 +124,7 @@ const kategoriar = [
 export default function MenySection() {
   return (
     <section className="py-[110px] max-sm:py-[70px] bg-paper relative" id="meny">
-      <div className="max-w-[1280px] mx-auto px-8 max-sm:px-5">
+      <div className="max-w-[1500px] mx-auto px-8 max-sm:px-5">
 
         {/* Overskrift */}
         <div className="flex justify-between items-end flex-wrap gap-6 mb-[60px]">

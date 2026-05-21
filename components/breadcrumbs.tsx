@@ -35,7 +35,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
       />
       <nav
         aria-label="Brødsmulesti"
-        className="max-w-7xl mx-auto px-8 max-sm:px-5 pt-24 pb-2"
+        className="max-w-[1500px] mx-auto px-8 max-sm:px-5 pt-24 pb-2"
       >
         <ol className="flex flex-wrap items-center gap-1.5 text-[12px] text-ink-mute">
           <li>

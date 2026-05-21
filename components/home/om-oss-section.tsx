@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function OmOssSection() {
   return (
     <section id="om" className="py-[110px] max-sm:py-[70px] bg-bg">
-      <div className="max-w-[1280px] mx-auto px-8 max-sm:px-5">
+      <div className="max-w-[1500px] mx-auto px-8 max-sm:px-5">
         <div className="grid grid-cols-[1fr_1.05fr] gap-20 items-center max-[900px]:grid-cols-1 max-[900px]:gap-12">
 
           {/* Bilete-stack */}

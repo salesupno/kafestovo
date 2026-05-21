@@ -31,7 +31,7 @@ export default function ReviewsSection() {
 
   return (
     <section className="py-[110px] max-sm:py-[70px] bg-paper relative" id="anmeldelser">
-      <div className="max-w-[1280px] mx-auto px-8 max-sm:px-5">
+      <div className="max-w-[1500px] mx-auto px-8 max-sm:px-5">
 
         {/* Topp: tekst + rating-kort */}
         <div className="grid grid-cols-[1.2fr_1fr] gap-16 items-end mb-14 max-[900px]:grid-cols-1 max-[900px]:gap-8">
