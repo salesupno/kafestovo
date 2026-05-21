@@ -187,7 +187,7 @@ export default function MenySection() {
             href="https://link.preoday.no/kaffestava"
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2.5 px-7 py-4 bg-burgundy text-cream rounded-full text-[15px] font-semibold hover:bg-burgundy-deep transition-colors"
+            className="inline-flex items-center gap-2.5 px-7 py-4 bg-burgundy text-cream rounded-full text-[15px] font-semibold transition-[background,transform,box-shadow] hover:bg-burgundy-deep hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-10px_rgba(107,22,20,0.5)]"
           >
             <Image src="/assets/go2grill-logo.png" alt="" width={60} height={22} className="h-[22px] w-auto brightness-0 invert" aria-hidden />
             Sjå full meny & bestill i Go2Grill
