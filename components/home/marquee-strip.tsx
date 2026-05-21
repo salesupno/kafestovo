@@ -1,28 +1,38 @@
 const items = [
-  "Husmannskost",
-  "Pub & Bar",
-  "Smørbrød & Snitter",
-  "Kaffi & Te",
-  "Selskap & Catering",
-  "Komle-middag",
-  "Pubquiz",
-  "Strikk & Drikk",
-  "Konjakk — 50+ sortar",
-  "Ailla rettigheter",
+  "Ækte kaffi",
+  "Hjemmelaga komle",
+  "Oksestek frå grillen",
+  "80 sortar konjakk",
+  "Strikk & Drikk kver tysdag",
+  "Pubquiz ein gång i månan",
+  "Catering · Selskap · Julebord",
 ];
 
 export default function MarqueeStrip() {
   const allItems = [...items, ...items];
   return (
-    <div className="py-4 overflow-hidden" style={{ background: "var(--color-burgundy)", color: "var(--color-cream)" }}>
-      <div className="flex" style={{ animation: "marquee 26s linear infinite" }}>
+    <div
+      className="overflow-hidden"
+      style={{
+        background: "var(--color-burgundy)",
+        color: "var(--color-cream)",
+        padding: "18px 0",
+        borderTop: "1px solid var(--color-burgundy-deep)",
+        borderBottom: "1px solid var(--color-burgundy-deep)",
+      }}
+    >
+      <div
+        className="flex whitespace-nowrap"
+        style={{ animation: "marquee 38s linear infinite", gap: "48px", width: "max-content" }}
+      >
         {allItems.map((item, i) => (
           <span
             key={i}
-            className="flex-none text-[12px] tracking-[0.28em] uppercase font-bold mx-7"
+            className="font-serif italic text-[22px] flex-none inline-flex items-center"
+            style={{ gap: "48px" }}
           >
-            <span className="mr-7 text-[10px] opacity-70" aria-hidden>&#9670;</span>
             {item}
+            <span className="text-gold not-italic text-[12px]" aria-hidden>✦</span>
           </span>
         ))}
       </div>

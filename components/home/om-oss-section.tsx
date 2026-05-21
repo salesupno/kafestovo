@@ -8,22 +8,43 @@ export default function OmOssSection() {
 
           {/* Bilete-stack */}
           <div className="reveal relative" style={{ aspectRatio: "4/5" }}>
-            <Image
-              src="/assets/owners.jpg"
-              alt="Vertskapet på Kafé Ståvå"
-              fill
-              sizes="(max-width: 900px) 75vw, 40vw"
-              className="object-cover rounded-[3px] shadow-[0_20px_60px_-20px_rgba(26,20,16,0.35)]"
-              style={{ width: "75%", height: "75%", position: "absolute", top: 0, left: 0 }}
-            />
-            <Image
-              src="/assets/dining-room.jpg"
-              alt="Selskapssalen pyntet"
-              fill
-              sizes="(max-width: 900px) 55vw, 28vw"
-              className="object-cover rounded-[3px] shadow-[0_20px_60px_-20px_rgba(26,20,16,0.35)]"
-              style={{ width: "55%", height: "55%", position: "absolute", bottom: 0, right: 0, border: "8px solid var(--color-bg)" }}
-            />
+            <div
+              style={{
+                position: "absolute",
+                top: 0, left: 0,
+                width: "75%", height: "75%",
+                borderRadius: "3px",
+                overflow: "hidden",
+                boxShadow: "0 20px 60px -20px rgba(26,20,16,0.35)",
+              }}
+            >
+              <Image
+                src="/assets/owners.jpg"
+                alt="Vertskapet på Kafé Ståvå"
+                fill
+                sizes="40vw"
+                className="object-cover"
+              />
+            </div>
+            <div
+              style={{
+                position: "absolute",
+                bottom: 0, right: 0,
+                width: "55%", height: "55%",
+                borderRadius: "3px",
+                overflow: "hidden",
+                border: "8px solid var(--color-bg)",
+                boxShadow: "0 20px 60px -20px rgba(26,20,16,0.35)",
+              }}
+            >
+              <Image
+                src="/assets/dining-room.jpg"
+                alt="Selskapssalen pyntet"
+                fill
+                sizes="28vw"
+                className="object-cover"
+              />
+            </div>
           </div>
 
           {/* Tekst */}
