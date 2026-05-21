@@ -3,6 +3,7 @@ import { Instrument_Serif, Caveat, Manrope } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
+import RevealObserver from "@/components/reveal-observer";
 
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
@@ -47,6 +48,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Nav />
+        <RevealObserver />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>

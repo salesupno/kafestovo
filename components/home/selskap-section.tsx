@@ -1,68 +1,154 @@
+"use client";
+
 import Link from "next/link";
-import { selskapTypar } from "@/content/selskap";
+
+const selskapKort = [
+  {
+    slug: "konfirmasjon",
+    title: "Konfirmasjon",
+    desc: "Sjølve dagen ell minnesamvær — me ordnar alt frå koldtbord te varme retter. Plass te 50 i selskapssalen.",
+    highlights: ["Koldtbord ell varm buffet", "Kaffi og kaka inkludert", "Eige rom for fotografering"],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ width: 22, height: 22 }}>
+        <path d="M12 3l2 5h5l-4 3 1.5 5L12 13l-4.5 3L9 11 5 8h5z"/>
+      </svg>
+    ),
+  },
+  {
+    slug: "julebord",
+    title: "Julebord",
+    desc: "Tradisjonell jærsk julebuffet, pinnekjøtt, ribbe og ailla tilbehør — for bedrift, vennegjeng ell familie. Bestill i god tid.",
+    highlights: ["Pinnekjøtt & ribbe", "Bar med ailla rettigheter", "Avtal underholdning ved ynskje"],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ width: 22, height: 22 }}>
+        <path d="M12 2v4M5 8l2 2M19 8l-2 2M3 14h18l-2 6H5z"/><circle cx="12" cy="11" r="2"/>
+      </svg>
+    ),
+  },
+  {
+    slug: "bryllup",
+    title: "Bryllup",
+    desc: "Den ekta jærske familiefesten — intime selskap opp te 50 stk. Me skreddarsyr meny og hjelp med dekorasjon.",
+    highlights: ["Skreddarsydd 3-rettars meny", "Toastmaster-område", "Skjenkebevilling te seint på kveld"],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ width: 22, height: 22 }}>
+        <path d="M9 11h6M12 8v6"/><path d="M6 3l-3 9 9 9 9-9-3-9z"/>
+      </svg>
+    ),
+  },
+  {
+    slug: "firmafest",
+    title: "Firmafest",
+    desc: "Sommarfest, kick-off ell vanlig fredagslunsj — me tar imot grupper frå 10 te 50. Snitter, smørbrød ell varm buffet.",
+    highlights: ["Lunsjlevering på huset", "Firmaregning og samlefaktura", "Quiz / pub som etterspel"],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ width: 22, height: 22 }}>
+        <rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+      </svg>
+    ),
+  },
+];
 
 export default function SelskapSection() {
   return (
-    <section className="py-28" style={{ background: "var(--color-ink)", color: "var(--color-cream)" }}>
-      <div className="max-w-7xl mx-auto px-8 max-sm:px-5">
+    <section
+      className="py-[110px] max-sm:py-[70px] relative overflow-hidden"
+      style={{ background: "var(--color-ink)", color: "var(--color-cream)" }}
+      id="selskap"
+    >
+      {/* Bakgrunnsgradienter */}
+      <div className="absolute top-[-200px] right-[-100px] w-[500px] h-[500px] pointer-events-none" style={{ background: "radial-gradient(circle, rgba(168,38,31,0.25) 0%, transparent 70%)" }} aria-hidden />
+      <div className="absolute bottom-[-200px] left-[-100px] w-[500px] h-[500px] pointer-events-none" style={{ background: "radial-gradient(circle, rgba(184,105,58,0.18) 0%, transparent 70%)" }} aria-hidden />
+
+      <div className="relative z-10 max-w-[1280px] mx-auto px-8 max-sm:px-5">
+
         {/* Overskrift */}
-        <div className="text-center mb-16">
-          <p className="reveal text-[11px] tracking-[0.35em] uppercase font-bold mb-5 opacity-50">
-            Selskap & Arrangement
-          </p>
-          <h2 className="reveal reveal-delay-1 text-[clamp(38px,5vw,68px)] leading-[1.05] mb-5">
-            Me fiksar <em className="text-copper">heile festen</em>
-          </h2>
-          <p className="reveal reveal-delay-2 text-[17px] opacity-70 max-w-xl mx-auto">
-            Konfirmasjon, julebord, bryllup, firmafest ell catering — salskapssalen
-            har plass te 50, og me ordnar mat, bar og stemning.
+        <div className="grid grid-cols-2 gap-16 items-end mb-16 max-[900px]:grid-cols-1 max-[900px]:gap-6">
+          <div>
+            <div className="reveal inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-gold font-bold mb-6 before:content-[''] before:w-6 before:h-px before:bg-gold">
+              Selskap & catering
+            </div>
+            <h2 className="reveal reveal-delay-1 text-[clamp(40px,6vw,76px)] leading-[0.98]">
+              Heile gjengen<br />
+              <em className="italic text-gold">samla hjå oss.</em>
+            </h2>
+          </div>
+          <p className="reveal reveal-delay-2 text-[17px] leading-[1.7]" style={{ color: "rgba(253,249,238,0.75)" }}>
+            Bakrommet vårt har plass te 50 stk. — pyntet, klart og med kjøkkenet rett ved sida av. Me lagar maten, dekkar bordet, og passer på at kvelden blir slik du ønskjer.
           </p>
         </div>
 
         {/* Selskap-grid */}
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-5 mb-10">
-          {selskapTypar.map((type, i) => (
+        <div className="grid grid-cols-4 gap-5 mb-14 max-[1024px]:grid-cols-2 max-[560px]:grid-cols-1">
+          {selskapKort.map((k, i) => (
             <Link
-              key={type.slug}
-              href={`/selskap/${type.slug}`}
-              className={`reveal reveal-delay-${i % 4} group p-7 rounded-[4px] border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] transition-[transform,background,box-shadow] hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)]`}
+              key={k.slug}
+              href={`/selskap/${k.slug}`}
+              className={`reveal reveal-delay-${i % 4} flex flex-col rounded-[3px] p-8 transition-[background,border-color,transform] duration-300 hover:-translate-y-1`}
+              style={{
+                background: "rgba(253,249,238,0.04)",
+                border: "1px solid rgba(253,249,238,0.12)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.background = "rgba(253,249,238,0.08)";
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--color-gold)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.background = "rgba(253,249,238,0.04)";
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(253,249,238,0.12)";
+              }}
             >
-              <p className="text-[10px] tracking-[0.3em] uppercase font-bold text-copper/80 mb-2">
-                {type.capacity}
-              </p>
-              <h3 className="text-[22px] font-serif font-normal mb-2 leading-tight">{type.title}</h3>
-              <p className="text-[14px] opacity-60 mb-4 leading-relaxed line-clamp-3">{type.description}</p>
-              <ul className="space-y-1.5 mb-4">
-                {type.highlights.slice(0, 3).map((h) => (
-                  <li key={h} className="flex items-center gap-2 text-[13px] opacity-70">
-                    <span className="w-4 h-4 rounded-full bg-copper/20 text-copper flex items-center justify-center text-[10px] flex-none" aria-hidden>&#10003;</span>
+              <div className="w-12 h-12 bg-burgundy rounded-full flex items-center justify-center mb-[22px] flex-none" style={{ color: "var(--color-cream)" }}>
+                {k.icon}
+              </div>
+              <h3 className="font-serif text-[26px] mb-3" style={{ color: "var(--color-cream)" }}>{k.title}</h3>
+              <p className="text-[14px] leading-relaxed mb-5 flex-1" style={{ color: "rgba(253,249,238,0.7)" }}>{k.desc}</p>
+              <ul>
+                {k.highlights.map((h) => (
+                  <li
+                    key={h}
+                    className="text-[13px] py-1 pl-[18px] relative"
+                    style={{ color: "rgba(253,249,238,0.85)" }}
+                  >
+                    <span className="absolute left-0 top-[5px] text-gold text-[10px]">✦</span>
                     {h}
                   </li>
                 ))}
               </ul>
-              <span className="text-copper text-[13px] font-semibold group-hover:underline">
-                Les meir &rarr;
-              </span>
             </Link>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="reveal text-center flex justify-center gap-4 flex-wrap">
-          <Link
-            href="/selskap"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-cream text-ink rounded-full text-[15px] font-semibold hover:bg-copper hover:text-cream transition-colors"
-          >
-            Sjå alt om selskap
-            <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden><path d="M3 8h10M9 4l4 4-4 4" /></svg>
-          </Link>
-          <a
-            href="mailto:post@kaffestava.no"
-            className="inline-flex items-center gap-2 px-8 py-4 border rounded-full text-[15px] font-semibold transition-colors hover:bg-cream/10"
-            style={{ borderColor: "rgba(255,255,255,0.2)" }}
-          >
-            Send oss ein e-post
-          </a>
+        {/* CTA-blokk */}
+        <div
+          className="rounded-[4px] p-12 grid grid-cols-[1.4fr_1fr] gap-10 items-center max-[760px]:grid-cols-1 max-[760px]:p-8"
+          style={{ background: "linear-gradient(135deg, var(--color-burgundy) 0%, var(--color-burgundy-deep) 100%)" }}
+        >
+          <div>
+            <h3 className="font-serif text-[clamp(28px,4vw,42px)] mb-3" style={{ color: "var(--color-cream)" }}>
+              Skal du <em className="italic text-gold">samla gjengen?</em>
+            </h3>
+            <p className="text-[16px] mb-6" style={{ color: "rgba(253,249,238,0.85)" }}>
+              Sett av datoen alt no. Send ein melding ell ring oss — så sett me opp ein meny som passer.
+            </p>
+            <a
+              href="mailto:post@kaffestava.no?subject=Selskap%20hj%C3%A5%20Kaf%C3%A9%20St%C3%A5v%C3%A5"
+              className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full text-[15px] font-semibold transition-[background,color] hover:bg-ink hover:text-cream"
+              style={{ background: "var(--color-cream)", color: "var(--color-burgundy-deep)", border: "1px solid var(--color-cream)" }}
+            >
+              Send oss ein førespørsel
+              <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </div>
+          <div className="max-[760px]:text-left text-right">
+            <div className="text-[11px] tracking-[0.22em] uppercase text-gold font-semibold mb-2">Ell ring direkte</div>
+            <div className="font-serif italic text-[clamp(28px,4vw,40px)] leading-none" style={{ color: "var(--color-cream)" }}>
+              <a href="tel:+4745285096">45 28 50 96</a>
+            </div>
+            <div className="text-[14px] mt-2" style={{ color: "rgba(253,249,238,0.8)" }}>
+              <a href="mailto:post@kaffestava.no">post@kaffestava.no</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
