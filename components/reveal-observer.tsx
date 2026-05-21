@@ -1,10 +1,17 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function RevealObserver() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const alreadyVisible: HTMLElement[] = [];
+
+    document.querySelectorAll<HTMLElement>(".reveal").forEach((el) => {
+      el.classList.remove("in");
+    });
 
     document.querySelectorAll<HTMLElement>(".reveal").forEach((el) => {
       if (el.getBoundingClientRect().top < window.innerHeight) {
@@ -35,7 +42,7 @@ export default function RevealObserver() {
     document.querySelectorAll(".reveal:not(.in)").forEach((el) => io.observe(el));
 
     return () => io.disconnect();
-  }, []);
+  }, [pathname]);
 
   return null;
 }
